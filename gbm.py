@@ -28,11 +28,12 @@ p.xlabel('Time, t')
 p.ylabel('Price, RM')
 
 # Find the mean, variance, probability, and its expected value
+print("Computation of Probability Functions from the simulation:")
 Mean = sum(S[:,1000]) / path
-print("Mean, E(S(3)) = ", Mean, "\n")
+print("Mean, E(S(3)) = ", Mean)
 Var = sum((S[:,1000])**2) / path - Mean**2
-print("Variance, Var(S(3)) = ", Var, "\n")
+print("Variance, Var(S(3)) = ", Var)
 P = sum(S[:,1000] > 39) / path
-print("P(S(3) > 39) = ", P, "\n")
+print("P[S(3) > 39] =", P)
 Exp = sum(S[:,1000])
-print("E[S(3)|S(3) > 39] = ", Exp, "\n")
+print("E[S(3)|S(3) > 39] =", Exp)
