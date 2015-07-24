@@ -24,16 +24,20 @@ S[:,1:] = S0 * p.exp(a*t[1:] + sigma*B[:,1:])
 S_plot = p.zeros([5,1001])
 S_plot[0:5,:] = S[0:5,:]
 p.plot(t, S_plot.transpose())
+p.title('Geometric Brownian Motion')
 p.xlabel('Time, t')
-p.ylabel('Price, RM')
+p.ylabel('S(t)')
 
 # Find the mean, variance, probability, and its expected value
-print("Computation of Probability Functions from the simulation:")
+print("Computation of mean, variance, P[S(3) > 39] and E[S(3)|S(3) > 39] from the simulation:")
 Mean = sum(S[:,1000]) / path
-print("Mean, E(S(3)) = ", Mean)
-Var = sum((S[:,1000])**2) / path - Mean**2
-print("Variance, Var(S(3)) = ", Var)
+print("Mean, E[S(3)] = ", Mean)
+Var = p.sum(S[:,1000] ** 2) / path - Mean**2
+print("Variance, Var[S(3)] = ", Var)
 P = sum(S[:,1000] > 39) / path
 print("P[S(3) > 39] =", P)
 Exp = sum(S[:,1000])
 print("E[S(3)|S(3) > 39] =", Exp)
+print("\nTheoretical variance:")
+Var_a = S0**2 * p.exp(2*mu*t[n]+sigma**2*t[n]) * (p.exp(sigma**2 * t[n]) - 1)
+print("Variance, Var[S(3)] = ", Var_a)
