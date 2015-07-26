@@ -23,8 +23,8 @@ R_plot = p.zeros([5,1001])
 R_plot[0:5,:] = R[0:5,:]
 p.plot(t,R_plot.transpose())
 p.title('Mean Reversal Process')
-p.xlabel('Time, t')
-p.ylabel('R(t)')
+p.xlabel('Time, $t$')
+p.ylabel('$R(t)$')
 
 # Calculate mean and probability
 Mean = p.sum(R[:,1000]) / path

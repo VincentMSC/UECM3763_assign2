@@ -25,8 +25,8 @@ S_plot = p.zeros([5,1001])
 S_plot[0:5,:] = S[0:5,:]
 p.plot(t, S_plot.transpose())
 p.title('Geometric Brownian Motion')
-p.xlabel('Time, t')
-p.ylabel('S(t)')
+p.xlabel('Time, $t$')
+p.ylabel('$S(t)$')
 
 # Find the mean, variance, probability, and its expected value
 print("Computation of mean, variance, P[S(3) > 39] and E[S(3)|S(3) > 39] from the simulation:")
